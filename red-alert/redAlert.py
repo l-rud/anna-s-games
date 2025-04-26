@@ -12,6 +12,7 @@ CENTER = (CENTER_X, CENTER_Y)              # Display_center_list
 FINAL_LEVEL = 10                           # Number_of_levels
 START_SPEED = 20                           # Initial_speed
 COLORS = ["green", "blue"]                 # Not click on the this colors
+BUTTON_RECT = Rect((CENTER_X - 75, CENTER_Y + 60), (150, 40))  # Button position and size 
 
 '''********************   Variable   *****************'''
 
@@ -28,7 +29,7 @@ def draw ():
     screen.clear()                         #Clear_the_screen
     screen.blit("space", (0, 0))
     if game_over:
-        display_message("GAME OVER!", "Try again.")          #Print_message_game_over_on_display
+        display_message("GAME OVER!", "")          #Print_message_game_over_on_display
     elif game_complete:
         display_message("YOU WON!", "Well done.")            #Print_message_end_game_on_display
     else:
