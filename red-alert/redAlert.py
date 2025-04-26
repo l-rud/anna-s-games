@@ -111,4 +111,8 @@ def display_message ( heading_text , sub_heading_text ):
     screen.draw.text( heading_text , fontsize = 60 , center = CENTER , color = FONT_COLOR )
     screen.draw.text( sub_heading_text , fontsize = 30 , center = ( CENTER_X , CENTER_Y + 30 ) , color = FONT_COLOR )
 
+def draw_play_again_button():
+    screen.draw.filled_rect(BUTTON_RECT, (0, 100, 200))  # Solid blue rectangle button
+    screen.draw.text("Play Again", center=BUTTON_RECT.center, fontsize=30, color="white")  # Button text  
+
 pgzrun.go()
