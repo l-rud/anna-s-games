@@ -89,7 +89,7 @@ def on_mouse_down (pos):
         if BUTTON_RECT.collidepoint(pos):
             reset_game()
         return
-        
+
     for star in stars:
         if star.collidepoint(pos) :
             if "red" in star.image :
@@ -120,4 +120,12 @@ def draw_play_again_button():
     screen.draw.filled_rect(BUTTON_RECT, (0, 100, 200))  # Solid blue rectangle button
     screen.draw.text("Play Again", center=BUTTON_RECT.center, fontsize=30, color="white")  # Button text  
 
+def reset_game():
+    global game_over, game_complete, current_level, stars, animations
+    game_over = False
+    game_complete = False
+    current_level = 1
+    stars = []
+    animations = []
+    
 pgzrun.go()
