@@ -30,8 +30,10 @@ def draw ():
     screen.blit("space", (0, 0))
     if game_over:
         display_message("GAME OVER!", "")          #Print_message_game_over_on_display
+        draw_play_again_button()
     elif game_complete:
         display_message("YOU WON!", "Well done.")            #Print_message_end_game_on_display
+        draw_play_again_button()
     else:
         for star in stars:
             star.draw()                    #Draw_star
