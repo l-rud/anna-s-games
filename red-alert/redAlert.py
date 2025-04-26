@@ -85,6 +85,11 @@ def handle_game_over ():
 
 def on_mouse_down (pos):
     global stars, current_level
+    if game_over or game_complete:
+        if BUTTON_RECT.collidepoint(pos):
+            reset_game()
+        return
+        
     for star in stars:
         if star.collidepoint(pos) :
             if "red" in star.image :
