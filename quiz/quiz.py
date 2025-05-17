@@ -24,11 +24,11 @@ time_left = 10
 game_over_flag = False
 game_over_message = ""
 
-q1 = ["What is the capital of france?",
-      "London", "Paris", "berlin", "Tokyo", 2]
+q1 = ["What is the capital of France?",
+      "London", "Paris", "Berlin", "Tokyo", 2]
 
 q2 = ["What color is the sky on a clear day?",
-      "Red", "purple", "blue", "green", 3]
+      "red", "purple", "blue", "green", 3]
 
 q3 = ["How many legs does a spider have?",
       "8", "6", "2", "12", 1]
@@ -37,7 +37,7 @@ q4 = ["How many days are there in a week?",
       "10", "12", "8", "7", 4]
 
 q5 = ["What is 6+8?",
-      "12", "10", "16", "18", 1]
+      "14", "10", "16", "18", 1]
 
 all_questions = [q1, q2, q3, q4, q5]
 questions = []
@@ -76,7 +76,10 @@ def draw():
 
 def game_over():
     global question, time_left, game_over_flag, game_over_message
-    game_over_message = "Game over. You got %s questions correct" % str(score)
+    if not questions:
+        game_over_message = "You answered all questions correctly! Final Score: %s" % str(score)
+    else:
+        game_over_message = "Game over. You got %s questions correct" % str(score)
     question = [game_over_message, "-", "-", "-", "-", 5]
     time_left = 0
     game_over_flag = True
